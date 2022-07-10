@@ -1,3 +1,7 @@
+## Raport.pdf is a report in which I tested all the algorithms, described each of them and compared the results.
+
+
+
 Stroke Prediction Dataset
 
 źródło:
@@ -42,15 +46,13 @@ train = pd.read_csv(\"healthcare-dataset-stroke-data.csv\")
 print(train.head())
 
 ![Obraz zawierający stół Opis wygenerowany
-automatycznie](./media/image1.png){width="6.3in"
-height="4.209027777777778in"}
+automatycznie](./media/image1.png)
 
 **Zduplikowane wiersze:**
 
 print(\"Liczba zduplikowanych wierszy:\", train.duplicated().sum())
 
-![](./media/image2.png){width="3.0420909886264216in"
-height="0.3854702537182852in"}
+![](./media/image2.png)
 
 **Dane kategoryczne:**
 
@@ -60,8 +62,7 @@ for i in categorical:\
 print(train\[i\].value_counts().to_frame(), \'\\n\')
 
 ![Obraz zawierający stół Opis wygenerowany
-automatycznie](./media/image3.png){width="3.1462718722659666in"
-height="5.771639326334208in"}
+automatycznie](./media/image3.png)
 
 Z powyższej analizy widzimy, że tylko jedna osoba została
 zidentyfikowana jako „Other" w kolumnie płeć. Możemy usunąć ten wiersz
@@ -87,8 +88,7 @@ print(dataset.isna().sum())
 \>\>
 
 ![Obraz zawierający stół Opis wygenerowany
-automatycznie](./media/image4.png){width="2.635784120734908in"
-height="2.802474846894138in"}
+automatycznie](./media/image4.png)
 
 Uzupełnimy brakujące dane dla kolumny **bmi** średnią
 
@@ -97,8 +97,7 @@ print(dataset.isna().sum())
 
 \>\>
 
-![](./media/image5.png){width="2.489931102362205in"
-height="2.8545647419072617in"}
+![](./media/image5.png)
 
 data_balance_check_labels = \[**\'stroke = 0\'**, **\'stroke = 1\'**\]\
 total_instances_per_value = df\[**\'stroke\'**\].value_counts()\
@@ -109,8 +108,7 @@ shadow = 1, explode = (0.1, 0), autopct=**\'%1.2f%%\'**, colors =
 pie_chart_colors)\
 plt.show()
 
-![](./media/image6.png){width="6.25in" height="4.597222222222222in"}
-
+![](./media/image6.png)
 Wykres pokazujący rozkład wierszy w których stroke = 1 lub stoke = 0
 
 **kNN**
@@ -136,31 +134,26 @@ print(\"Accuracy k=1:\", accuracy_1\_rounded, \"% \\n\")
 
 **k = 1**
 
-![](./media/image7.png){width="1.9586067366579178in"
-height="0.29170713035870516in"}
+![](./media/image7.png)
 
 plot_confusion_matrix(knn, x_test, y_test, display_labels=\[\"Less
 chance\", \"More chance\"\], cmap=plt.cm.YlOrRd)\
 plt.show()
 
-![](./media/image8.png){width="5.75080271216098in"
-height="4.688153980752406in"}
+![](./media/image8.png)
 
 **k = 3**
 
-![](./media/image9.png){width="2.000278871391076in"
-height="0.20836286089238845in"}
-![](./media/image10.png){width="6.136272965879265in"
-height="4.7194083552056in"}
+![](./media/image9.png)
+![](./media/image10.png)
 
 **k = 5**
 
-![](./media/image11.png){width="2.166969597550306in"
-height="0.3021259842519685in"}
+![](./media/image11.png)
 
-![](./media/image12.png){width="6.3in" height="4.727083333333334in"}
+![](./media/image12.png)
 
-![](./media/image13.png){width="6.3in" height="3.1375in"}
+![](./media/image13.png)
 
 *k = 1, k = 3, k = 5*
 
@@ -180,11 +173,9 @@ chance\", \"More chance\"\], cmap=plt.cm.YlOrRd)\
 plt.show()
 
 ![Obraz zawierający tekst Opis wygenerowany
-automatycznie](./media/image14.png){width="3.125436351706037in"
-height="0.5938331146106737in"}
+automatycznie](./media/image14.png)
 
-![](./media/image15.png){width="6.198781714785651in"
-height="4.844425853018373in"}
+![](./media/image15.png)
 
 **Drzewa decyzyjne**
 
@@ -200,18 +191,16 @@ plot_confusion_matrix(clf, x_test, y_test, display_labels=\[\"Less
 chance\", \"More chance\"\], cmap=plt.cm.YlOrRd)\
 plt.show()
 
-![](./media/image16.png){width="3.4796522309711286in"
-height="0.6667596237970254in"}
+![](./media/image16.png)
 
-![](./media/image17.png){width="6.3in" height="4.820138888888889in"}
+![](./media/image17.png)
 
 **Drzewo decyzyjne w postaci grafu**
 
 tree.plot_tree(clf)\
 plt.savefig(\'tree.pdf
 
-![](./media/image18.png){width="5.6570395888014in"
-height="3.9484678477690287in"}
+![](./media/image18.png)
 
 **Regresja logistyczna**
 
@@ -226,10 +215,9 @@ print(classification_report(y_test, y_predict_test))\
 print(**\'Accuracy Logistic Regression: \'** ,
 accuracy_score(y_test,y_predict_test))
 
-![](./media/image19.png){width="4.833333333333333in" height="2.1875in"}
+![](./media/image19.png)
 
-![](./media/image20.png){width="5.854166666666667in"
-height="4.958333333333333in"}
+![](./media/image20.png)
 
 **Sieci neuronowe**
 
@@ -245,18 +233,17 @@ model.compile(optimizer = \'Adam\', loss =
 tf.keras.losses.BinaryCrossentropy(), metrics = \[\'accuracy\'\])
 
 ![Obraz zawierający stół Opis wygenerowany
-automatycznie](./media/image21.png){width="5.84456583552056in"
-height="3.500488845144357in"}
+automatycznie](./media/image21.png)
 
 model.fit(x_train, y_train, epochs = 200, validation_split=0.2,
 verbose=1)\
 model.evaluate( x_test, y_test)
 
-![](./media/image22.png){width="6.3in"
-height="0.4097222222222222in"}***Accuracy: 0.9667***
+![](./media/image22.png)
+***Accuracy: 0.9667***
 
 ***Skuteczność klasyfikatorów***
 
-![](./media/image23.png){width="6.3in" height="3.1534722222222222in"}
+![](./media/image23.png)
 
 ***Knn Naive Bayes Drzewa decyzyjne Regresja log. NN***
