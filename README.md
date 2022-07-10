@@ -1,4 +1,4 @@
-## Raport.pdf is a report in which I tested all the algorithms, described each of them and compared the results.
+## Raport.pdf is a report in which I tested all the algorithms, described each of them and compared the results. You can also see the raport below, but Markdown files does not format the text & images well.
 
 
 
